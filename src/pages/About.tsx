@@ -3,7 +3,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { CinematicHero } from "@/components/about/CinematicHero";
 import { OurStory } from "@/components/about/OurStory";
-import OurPeople from "@/components/about/ourpeople";
+import OurPeople from "@/components/about/OurPeople";
 
 import { VideoSection } from "@/components/about/VideoSection";
 import { ManufacturingPortfolio } from "@/components/about/ManufacturingPortfolio";
