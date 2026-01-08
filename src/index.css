@@ -1,0 +1,223 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fonts loaded via index.html for better performance */
+
+@layer base {
+  :root {
+    /* Brand Colors - DAAS CREATION */
+    --background: 20 47% 96%;
+    --foreground: 0 65% 9%;
+
+    --card: 20 47% 96%;
+    --card-foreground: 0 65% 9%;
+
+    --popover: 20 47% 96%;
+    --popover-foreground: 0 65% 9%;
+
+    --primary: 352 81% 18%;
+    --primary-foreground: 20 47% 96%;
+
+    --secondary: 15 34% 83%;
+    --secondary-foreground: 352 81% 18%;
+
+    --muted: 15 34% 88%;
+    --muted-foreground: 352 25% 38%;
+
+    --accent: 352 22% 47%;
+    --accent-foreground: 20 47% 96%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 15 34% 83%;
+    --input: 15 34% 83%;
+    --ring: 352 81% 18%;
+
+    --radius: 0.5rem;
+
+    /* Custom design tokens */
+    --font-heading: 'Cormorant Garamond', serif;
+    --font-body: 'DM Sans', sans-serif;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(180deg, hsl(20 47% 96%) 0%, hsl(15 34% 90%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(352 81% 18%) 0%, hsl(0 65% 9%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(15 34% 88%) 0%, hsl(20 47% 96%) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px -2px hsl(352 81% 18% / 0.08);
+    --shadow-md: 0 8px 24px -4px hsl(352 81% 18% / 0.12);
+    --shadow-lg: 0 20px 50px -12px hsl(352 81% 18% / 0.18);
+    
+    /* Edge lighting / Glow */
+    --glow-primary: 0 0 20px hsl(352 81% 18% / 0.3), 0 0 40px hsl(352 81% 18% / 0.15);
+    --glow-subtle: 0 0 15px hsl(352 81% 18% / 0.15);
+    --glow-card: 0 4px 20px -4px hsl(352 81% 18% / 0.12), 0 0 25px hsl(352 81% 18% / 0.08);
+
+    /* Animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 0 65% 9%;
+    --foreground: 20 47% 96%;
+
+    --card: 0 65% 12%;
+    --card-foreground: 20 47% 96%;
+
+    --popover: 0 65% 12%;
+    --popover-foreground: 20 47% 96%;
+
+    --primary: 20 47% 96%;
+    --primary-foreground: 352 81% 18%;
+
+    --secondary: 352 22% 25%;
+    --secondary-foreground: 20 47% 96%;
+
+    --muted: 352 22% 20%;
+    --muted-foreground: 15 34% 70%;
+
+    --accent: 15 34% 70%;
+    --accent-foreground: 0 65% 9%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 352 22% 20%;
+    --input: 352 22% 20%;
+    --ring: 20 47% 96%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', serif;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.8s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.5s ease-out forwards;
+  }
+
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .animation-delay-500 {
+    animation-delay: 500ms;
+  }
+
+  /* Edge lighting utilities */
+  .edge-glow {
+    box-shadow: var(--glow-primary);
+    transition: box-shadow 0.3s ease;
+  }
+
+  .edge-glow-subtle {
+    box-shadow: var(--glow-subtle);
+    transition: box-shadow 0.3s ease;
+  }
+
+  .edge-glow-hover:hover {
+    box-shadow: var(--glow-primary);
+  }
+
+  .card-glow:hover {
+    box-shadow: var(--glow-card);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
