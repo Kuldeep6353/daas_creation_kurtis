@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -27,7 +28,26 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
-const App = () => (
+const App = () => {
+    useEffect(() => {
+    const disableContextMenu = (e: MouseEvent) => {
+      e.preventDefault()
+    }
+
+    const disableDrag = (e: DragEvent) => {
+      e.preventDefault()
+    }
+
+    document.addEventListener("contextmenu", disableContextMenu)
+    document.addEventListener("dragstart", disableDrag)
+
+    return () => {
+      document.removeEventListener("contextmenu", disableContextMenu)
+      document.removeEventListener("dragstart", disableDrag)
+    }
+  }, [])
+  return (
+
   <HelmetProvider>
     <QueryClientProvider client={queryClient}>
       <AuthProvider>
@@ -57,6 +77,8 @@ const App = () => (
       </AuthProvider>
     </QueryClientProvider>
   </HelmetProvider>
-);
+  )
+}
+
 
 export default App;

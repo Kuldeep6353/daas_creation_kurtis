@@ -59,7 +59,7 @@ export default function OurPeople() {
         {/* BIG IMAGE — STITCHING TEAM */}
         <div className="overflow-hidden rounded-2xl">
           <img
-            src="/images/stitching-team.jpg"
+            src="/images/stitching-team.jpeg"
             alt="Stitching Team"
             className="w-full h-[420px] object-cover"
           />

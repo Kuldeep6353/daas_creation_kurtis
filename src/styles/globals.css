@@ -1,0 +1,13 @@
+/* Disable image & video selection and dragging */
+img, video {
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none;
+}
+
+/* Disable text selection globally */
+body {
+  user-select: none;
+  -webkit-user-select: none;
+}
